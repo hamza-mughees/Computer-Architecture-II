@@ -5,7 +5,7 @@ extrn scanf:near
 .data
 	print_string1 BYTE "Please enter an integer: ", 00h
 	print_string2 BYTE "The sum of proc. and user inputs (%lld, %lld, %lld, %lld): %lld", 0Ah, 00h
-	scan_string BYTE "%lld"
+	scan_string BYTE "%lld", 00h
 	public inp_int
 	inp_int QWORD 0
 .code
@@ -91,7 +91,6 @@ max:
 	cmp rdx, rax			; if b > v
 	jle max_0
 	mov rax, rdx			; v = b
-	jmp max_1
 max_0:
 	cmp r8, rax				; if c > v
 	jle max_1
