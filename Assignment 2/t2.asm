@@ -25,7 +25,7 @@ fin_0:
 	mov rax, 1				; return 1
 	ret
 fin_1:						; otherwise
-	sub rsp, 32				; create shadow space
+	sub rsp, 32				; allocate shadow space
 
 	dec rcx					; fin - 1
 	call fibX64				; fib(fin-1)
@@ -36,7 +36,7 @@ fin_1:						; otherwise
 	add rcx, 2				; fin, for higher level of recursion
 	add rax, [rsp+48]		; add sum to 
 
-	add rsp, 32
+	add rsp, 32				; deallocate shadow space
 	ret
 
 ;; Program 2
