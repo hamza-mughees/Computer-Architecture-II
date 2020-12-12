@@ -10,7 +10,7 @@ max:
     sub r27, r1, r0, {C}
     add r0, r27, r1 	    ; v = b
 max_0:
-	  jle max_1	    ; if v < c
+    jle max_1	    	    ; if v < c
     sub r28, r1, r0, {C}
     add r0, r28, r1	    ; v = c
 max_1:
