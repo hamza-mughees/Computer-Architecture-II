@@ -5,14 +5,14 @@
 ; r28 contains c
 public max
 max:
-	  add r0, r26, r1			    ; v = a
-	  jle max_0			          ; if v < b
+    add r0, r26, r1	    ; v = a
+    jle max_0		    ; if v < b
     sub r27, r1, r0, {C}
-    add r0, r27, r1 		    ; v = b
+    add r0, r27, r1 	    ; v = b
 max_0:
-	  jle max_1			          ; if v < c
+	  jle max_1	    ; if v < c
     sub r28, r1, r0, {C}
-    add r0, r28, r1		      ; v = c
+    add r0, r28, r1	    ; v = c
 max_1:
     ret r31, r0
     xor r0, r0, r0          ; NOPS
